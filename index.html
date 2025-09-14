@@ -14,13 +14,10 @@
 <script>
 	const xhr = new XMLHttpRequest();
 	xhr.open("GET", "raw.githubusercontent.com/25619/logins/refs/heads/main/logins.txt")
-	xhr.onreadystatechange = () => {
-	// Call a function when the state changes.
-	if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+	xhr.onload = () => {
 		console.log(xhr.responseText)
 	}
-	};
-	xhr.send(null);
+	
 
 	document.getElementById("loginButton").addEventListener("click", function() {
 		var username = document.getElementById("username").value;
