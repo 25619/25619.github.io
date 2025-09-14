@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
 </head>
 <body>
-    <input type="text" id="username" placeholder="Username">
-    <input type="password" id="password" placeholder="Password">
-    <button id="loginButton">Login</button>
+	<input type="text" id="username" placeholder="Username">
+	<input type="password" id="password" placeholder="Password">
+	<button id="loginButton">Login</button>
 </body>
 <script>
-    document.getElementById("loginButton").addEventListener("click", function() {
-        var username = document.getElementById("username").value;
-        var password = document.getElementById("password").value;
+	const xhr = new XMLHttpRequest();
+	xhr.open("POST", "void0undefined.eu.pythonanywhere.com")
+	xhr.onreadystatechange = () => {
+	// Call a function when the state changes.
+	if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+		console.log(xhr.responseText)
+	}
+	};
+	xhr.send();
 
-        if (username === "admin" && password === "password") {
-            alert("Login successful!");
-        } else {
-            alert("Invalid username or password.");
-        }
-    });
+	document.getElementById("loginButton").addEventListener("click", function() {
+		var username = document.getElementById("username").value;
+		var password = document.getElementById("password").value;
+
+		if (username === "admin" && password === "password") {
+			alert("Login successful!");
+		} else {
+			alert("Invalid username or password.");
+		}
+	});
 </script>
 </html>
