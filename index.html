@@ -14,6 +14,7 @@
 <script>
 	const xhr = new XMLHttpRequest();
 	xhr.open("POST", "void0undefined.eu.pythonanywhere.com/login")
+	xhr.setRequestHeader("Content-Type", "text/plain")
 	xhr.onreadystatechange = () => {
 	// Call a function when the state changes.
 	if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
@@ -34,4 +35,3 @@
 	});
 </script>
 </html>
-
